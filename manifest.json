@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Telegram Media Downloader",
+  "version": "1.0",
+  "description": "Download photos and videos from a specific Telegram Web message.",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://web.telegram.org/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.telegram.org/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
